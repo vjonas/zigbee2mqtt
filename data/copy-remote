@@ -1,0 +1,1 @@
+scp -r jonasvercammen@192.168.1.210:/opt/zigbee2mqtt-local/zigbee2mqtt/data ~/Desktop/z2m/data

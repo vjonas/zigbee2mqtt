@@ -1,20 +1,80 @@
-# Home Assistant integration (MQTT discovery)
 homeassistant: false
-
-# allow new devices to join
 permit_join: true
-
-# MQTT settings
 mqtt:
-  # MQTT base topic for zigbee2mqtt MQTT messages
   base_topic: zigbee2mqtt
-  # MQTT server URL
-  server: 'mqtt://localhost'
-  # MQTT server authentication, uncomment if required:
-  # user: my_user
-  # password: my_password
-
-# Serial settings
+  server: mqtt://localhost:1883
 serial:
-  # Location of CC2531 USB sniffer
-  port: /dev/ttyACM0
+  port: /dev/ttyUSB0
+frontend:
+  port: 8080
+  host: 192.168.1.210
+advanced:
+  log_level: debug
+  network_key:
+    - 163
+    - 187
+    - 92
+    - 2
+    - 247
+    - 95
+    - 44
+    - 129
+    - 102
+    - 164
+    - 114
+    - 242
+    - 172
+    - 173
+    - 127
+    - 144
+  homeassistant_legacy_entity_attributes: false
+  legacy_api: false
+  legacy_availability_payload: false
+  log_syslog:
+    app_name: Zigbee2MQTT
+    eol: /n
+    host: localhost
+    localhost: localhost
+    path: /dev/log
+    pid: process.pid
+    port: 514
+    protocol: udp4
+    type: '5424'
+  channel: 12
+device_options:
+  legacy: false
+devices:
+  '0x94deb8fffe41f6d6':
+    friendly_name: rookmelder keuken
+  '0x001788010b1d1765':
+    friendly_name: jonas bureau lamp
+  '0x70ac08fffe5fd2e1':
+    friendly_name: rookmelder washok
+  '0x70ac08fffe5fdd7e':
+    friendly_name: rookmelder garage
+  '0x0017880108b1f00a':
+    friendly_name: living tafel
+    color_sync: false
+  '0xf4b3b1fffe6bc066':
+    friendly_name: rookmelder spinneke
+  '0xa4c138e1edac7acc':
+    friendly_name: smart-button-1
+  '0xa4c138929572dd6f':
+    friendly_name: smart-button-2-worse-no-led
+    description: worse button no led
+  '0xa4c13896f18b4f71':
+    friendly_name: smart plug
+  '0xa4c138afd445be3b':
+    friendly_name: motion keuken
+  '0xa4c13824e54608f8':
+    friendly_name: motion living
+  '0xa4c1384e4f68ed53':
+    friendly_name: deur sensor
+  '0xa4c1380d6c025a61':
+    friendly_name: raam sensor bureau jonas
+  '0xa4c138058cc93594':
+    friendly_name: Fingerbot
+  '0xa4c1385bc92a43b4':
+    friendly_name: garage lichten
+  '0xa4c13895c144b357':
+    friendly_name: Kerstlichten plug
